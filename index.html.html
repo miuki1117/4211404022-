@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>22咖啡｜臺中東區的安靜咖啡館</title>
+
+  <meta
+    name="description"
+    content="22咖啡位於臺中市東區，距離臺中火車站步行約8分鐘，提供手沖咖啡、自製甜點、穩定Wi-Fi與充足插座。"
+  >
+
+  <style>
+    /* =========================
+       基本設定
+    ========================== */
+    :root {
+      --navy: #17324d;
+      --navy-dark: #10263a;
+      --blue: #8fb6cf;
+      --blue-light: #dcebf3;
+      --white: #ffffff;
+      --cream: #f7f8f6;
+      --wood: #c6aa8b;
+      --text: #30404d;
+      --muted: #71808b;
+      --border: #dce3e7;
+      --shadow: 0 12px 30px rgba(23, 50, 77, 0.08);
+
+      --max-width: 1120px;
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        "Noto Sans TC",
+        "PingFang TC",
+        "Microsoft JhengHei",
+        sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.8;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(90%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    /* =========================
+       Header
+    ========================== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(220, 227, 231, 0.8);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--navy);
+    }
+
+    .logo span {
+      display: block;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      transition: color 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    /* =========================
+       Hero
+    ========================== */
+    .hero {
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(16, 38, 58, 0.95) 0%,
+          rgba(23, 50, 77, 0.82) 48%,
+          rgba(23, 50, 77, 0.35) 100%
+        ),
+        linear-gradient(135deg, #8fa9b8, #d9e5ea);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* 模擬木質光影，不需要額外圖片 */
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -120px;
+      bottom: -180px;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      background: rgba(198, 170, 139, 0.22);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 620px;
+      padding: 80px 0;
+    }
+
+    .eyebrow {
+      font-size: 0.85rem;
+      letter-spacing: 0.25em;
+      margin-bottom: 18px;
+      color: var(--blue-light);
+    }
+
+    .hero h1 {
+      font-size: clamp(3.2rem, 8vw, 6rem);
+      line-height: 1;
+      letter-spacing: 0.08em;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      font-size: 0.3em;
+      display: block;
+      letter-spacing: 0.35em;
+      margin-top: 18px;
+      font-weight: 400;
+    }
+
+    .hero p {
+      max-width: 530px;
+      color: #eaf3f7;
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 24px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: all 0.25s ease;
+      font-size: 0.9rem;
+    }
+
+    .btn-primary {
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    .btn-primary:hover {
+      background: var(--blue-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border-color: rgba(255,255,255,0.6);
+      color: var(--white);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.12);
+    }
+
+    /* =========================
+       Section 通用
+    ========================== */
+    section {
+      padding: 100px 0;
+    }
+
+    .section-heading {
+      margin-bottom: 48px;
+      max-width: 650px;
+    }
+
+    .section-label {
+      display: block;
+      color: var(--blue);
+      font-size: 0.8rem;
+      letter-spacing: 0.25em;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      color: var(--navy);
+      font-size: clamp(1.9rem, 4vw, 2.7rem);
+      margin-bottom: 12px;
+      letter-spacing: 0.05em;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    /* =========================
+       關於我們
+    ========================== */
+    .about {
+      background: var(--cream);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-visual {
+      min-height: 430px;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(
+          135deg,
+          rgba(198, 170, 139, 0.35),
+          rgba(143, 182, 207, 0.35)
+        ),
+        var(--blue-light);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .about-visual::before {
+      content: "22";
+      position: absolute;
+      left: 40px;
+      bottom: 10px;
+      font-size: 12rem;
+      line-height: 1;
+      font-weight: 700;
+      color: rgba(23, 50, 77, 0.08);
+    }
+
+    .about-card {
+      position: absolute;
+      width: 220px;
+      padding: 24px;
+      right: 35px;
+      top: 60px;
+      background: rgba(255,255,255,0.86);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-card strong {
+      display: block;
+      color: var(--navy);
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .feature-list li {
+      padding: 13px 16px;
+      border-left: 3px solid var(--blue);
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    /* =========================
+       菜單
+    ========================== */
+    .menu {
+      background: var(--white);
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .menu-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      background: var(--white);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .menu-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--blue-light);
+      color: var(--navy);
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+    }
+
+    .menu-card h3 {
+      color: var(--navy);
+      font-size: 1.35rem;
+      margin-bottom: 20px;
+    }
+
+    .menu-list {
+      list-style: none;
+    }
+
+    .menu-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 12px 0;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .menu-list li:last-child {
+      border-bottom: none;
+    }
+
+    .price {
+      color: var(--navy);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* =========================
+       空間設備
+    ========================== */
+    .space {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .space .section-heading h2 {
+      color: var(--white);
+    }
+
+    .space .section-heading p {
+      color: #c8d6df;
+    }
+
+    .space-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .space-card {
+      padding: 30px 22px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .space-card .number {
+      color: var(--blue);
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+    }
+
+    .space-card h3 {
+      margin: 35px 0 10px;
+      font-size: 1.1rem;
+    }
+
+    .space-card p {
+      color: #c8d6df;
+      font-size: 0.9rem;
+    }
+
+    /* =========================
+       營業資訊
+    ========================== */
+    .info {
+      background: var(--cream);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .info-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 34px;
+      border: 1px solid var(--border);
+    }
+
+    .info-card h3 {
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .info-row {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 15px;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .info-row:last-child {
+      border-bottom: none;
+    }
+
+    .info-row strong {
+      color: var(--navy);
+    }
+
+    .info-row span {
+      color: var(--muted);
+    }
+
+    /* =========================
+       聯絡與行動
+    ========================== */
+    .contact {
+      background: var(--white);
+    }
+
+    .contact-box {
+      background: var(--blue-light);
+      border-radius: 24px;
+      padding: 55px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .contact-box h2 {
+      color: var(--navy);
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 15px;
+    }
+
+    .contact-box p {
+      color: var(--text);
+      margin-bottom: 25px;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .contact-details {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-details a,
+    .contact-details div {
+      display: block;
+      padding: 14px 18px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.72);
+      color: var(--navy);
+    }
+
+    .contact-details a:hover {
+      background: var(--white);
+    }
+
+    /* =========================
+       Footer
+    ========================== */
+    footer {
+      padding: 35px 0;
+      background: var(--navy-dark);
+      color: #b8c7d0;
+      font-size: 0.8rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* =========================
+       RWD
+    ========================== */
+    @media (max-width: 900px) {
+      .about-grid,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .space-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .about-visual {
+        min-height: 350px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      header {
+        position: relative;
+      }
+
+      .nav {
+        min-height: 65px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 620px;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .hero-content {
+        padding: 60px 0;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+      }
+
+      .menu-grid,
+      .space-grid,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-card,
+      .info-card {
+        padding: 25px;
+      }
+
+      .contact-box {
+        padding: 35px 25px;
+      }
+
+      .info-row {
+        grid-template-columns: 85px 1fr;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+
+      .about-visual {
+        min-height: 280px;
+      }
+
+      .about-card {
+        right: 20px;
+        top: 35px;
+        width: 190px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       Header
+  ========================== -->
+  <header>
+    <div class="container nav">
+
+      <a href="#top" class="logo" aria-label="22咖啡首頁">
+        22咖啡
+        <span>COFFEE & DESSERT</span>
+      </a>
+
+      <nav aria-label="主要導覽">
+        <ul class="nav-links">
+          <li><a href="#about">關於我們</a></li>
+          <li><a href="#menu">菜單</a></li>
+          <li><a href="#space">空間</a></li>
+          <li><a href="#info">營業資訊</a></li>
+          <li><a href="#contact">聯絡我們</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- =========================
+         01 Hero
+    ========================== -->
+    <section class="hero" aria-labelledby="hero-title">
+
+      <div class="container hero-content">
+
+        <div class="eyebrow">
+          TAICHUNG · EAST DISTRICT
+        </div>
+
+        <h1 id="hero-title">
+          22咖啡
+          <span>給自己一段安靜的時間</span>
+        </h1>
+
+        <p>
+          在臺中東區，距離火車站步行約 8 分鐘。
+          一杯手沖、一份甜點，搭配穩定的 Wi-Fi 與充足插座，
+          留一個舒服的位置給工作、閱讀，或只是好好休息。
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#menu" class="btn btn-primary">
+            查看今日菜單
+          </a>
+
+          <a href="#contact" class="btn btn-outline">
+            找到我們
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         02 關於我們
+    ========================== -->
+    <section id="about" class="about" aria-labelledby="about-title">
+
+      <div class="container">
+
+        <div class="about-grid">
+
+          <div class="about-visual" aria-hidden="true">
+            <div class="about-card">
+              <strong>8 min.</strong>
+              臺中火車站步行約 8 分鐘
+            </div>
+          </div>
+
+          <div class="about-text">
+
+            <div class="section-heading">
+              <span class="section-label">ABOUT 22</span>
+              <h2 id="about-title">一間適合慢下來的咖啡館</h2>
+              <p>
+                我們相信，咖啡館不只是喝咖啡的地方，
+                也可以是一個讓人專心工作的角落，
+                或是在忙碌生活裡喘口氣的空間。
+              </p>
+            </div>
+
+            <p>
+              22咖啡以簡單、舒服為出發點，保留木質調與大量留白，
+              讓空間不需要太多裝飾，也能讓人自然放慢腳步。
+            </p>
+
+            <ul class="feature-list">
+              <li>☕ 手沖咖啡・每日精選豆單</li>
+              <li>🍰 自製甜點・每日少量製作</li>
+              <li>📶 穩定 Wi-Fi・適合工作閱讀</li>
+              <li>🔌 充足插座・平日下午不限時</li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         03 菜單
+    ========================== -->
+    <section id="menu" class="menu" aria-labelledby="menu-title">
+
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-label">MENU</span>
+          <h2 id="menu-title">今天想喝什麼？</h2>
+          <p>
+            從一杯乾淨的手沖，到適合午後的自製甜點，
+            選一個你喜歡的節奏。
+          </p>
+        </div>
+
+        <div class="menu-grid">
+
+          <!-- 咖啡 -->
+          <article class="menu-card">
+
+            <div class="menu-icon">☕</div>
+
+            <h3>咖啡</h3>
+
+            <ul class="menu-list">
+              <li>
+                <span>美式咖啡</span>
+                <span class="price">$100</span>
+              </li>
+
+              <li>
+                <span>拿鐵</span>
+                <span class="price">$130</span>
+              </li>
+
+              <li>
+                <span>卡布奇諾</span>
+                <span class="price">$130</span>
+              </li>
+
+              <li>
+                <span>手沖咖啡</span>
+                <span class="price">$160↑</span>
+              </li>
+            </ul>
+
+          </article>
+
+
+          <!-- 非咖啡 -->
+          <article class="menu-card">
+
+            <div class="menu-icon">✦</div>
+
+            <h3>非咖啡</h3>
+
+            <ul class="menu-list">
+              <li>
+                <span>鮮奶茶</span>
+                <span class="price">$120</span>
+              </li>
+
+              <li>
+                <span>抹茶拿鐵</span>
+                <span class="price">$140</span>
+              </li>
+
+              <li>
+                <span>可可</span>
+                <span class="price">$130</span>
+              </li>
+
+              <li>
+                <span>氣泡飲</span>
+                <span class="price">$120</span>
+              </li>
+            </ul>
+
+          </article>
+
+
+          <!-- 甜點 -->
+          <article class="menu-card">
+
+            <div class="menu-icon">♡</div>
+
+            <h3>甜點</h3>
+
+            <ul class="menu-list">
+              <li>
+                <span>巴斯克乳酪蛋糕</span>
+                <span class="price">$150</span>
+              </li>
+
+              <li>
+                <span>檸檬磅蛋糕</span>
+                <span class="price">$120</span>
+              </li>
+
+              <li>
+                <span>季節水果塔</span>
+                <span class="price">$150</span>
+              </li>
+
+              <li>
+                <span>每日限定甜點</span>
+                <span class="price">洽詢</span>
+              </li>
+            </ul>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         04 空間設備
+    ========================== -->
+    <section id="space" class="space" aria-labelledby="space-title">
+
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-label">SPACE & FACILITIES</span>
+          <h2 id="space-title">把時間留給自己</h2>
+          <p>
+            不論是帶著筆電工作、拿一本書閱讀，
+            或只是靜靜喝完一杯咖啡，都可以找到適合自己的位置。
+          </p>
+        </div>
+
+        <div class="space-grid">
+
+          <article class="space-card">
+            <span class="number">01</span>
+            <h3>充足插座</h3>
+            <p>
+              多數座位附近設有插座，適合長時間使用筆電。
+            </p>
+          </article>
+
+          <article class="space-card">
+            <span class="number">02</span>
+            <h3>穩定 Wi-Fi</h3>
+            <p>
+              提供穩定網路，工作、查資料或線上學習都方便。
+            </p>
+          </article>
+
+          <article class="space-card">
+            <span class="number">03</span>
+            <h3>平日下午不限時</h3>
+            <p>
+              平日下午可以慢慢坐，讓工作與休息都不用趕時間。
+            </p>
+          </article>
+
+          <article class="space-card">
+            <span class="number">04</span>
+            <h3>木質留白空間</h3>
+            <p>
+              以木質、白色與藍色為主調，打造安靜舒服的氛圍。
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         05 營業資訊
+    ========================== -->
+    <section id="info" class="info" aria-labelledby="info-title">
+
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-label">INFORMATION</span>
+          <h2 id="info-title">營業資訊</h2>
+          <p>出發前可以先確認營業時間與位置。</p>
+        </div>
+
+        <div class="info-grid">
+
+          <div class="info-card">
+
+            <h3>營業時間</h3>
+
+            <div class="info-row">
+              <strong>週一</strong>
+              <span>12:00 – 20:00</span>
+            </div>
+
+            <div class="info-row">
+              <strong>週二</strong>
+              <span>12:00 – 20:00</span>
+            </div>
+
+            <div class="info-row">
+              <strong>週三</strong>
+              <span>12:00 – 20:00</span>
+            </div>
+
+            <div class="info-row">
+              <strong>週四</strong>
+              <span>12:00 – 20:00</span>
+            </div>
+
+            <div class="info-row">
+              <strong>週五</strong>
+              <span>12:00 – 21:00</span>
+            </div>
+
+            <div class="info-row">
+              <strong>週六日</strong>
+              <span>11:00 – 21:00</span>
+            </div>
+
+          </div>
+
+
+          <div class="info-card">
+
+            <h3>交通與提醒</h3>
+
+            <div class="info-row">
+              <strong>位置</strong>
+              <span>臺中市東區</span>
+            </div>
+
+            <div class="info-row">
+              <strong>火車站</strong>
+              <span>步行約 8 分鐘</span>
+            </div>
+
+            <div class="info-row">
+              <strong>Wi-Fi</strong>
+              <span>提供</span>
+            </div>
+
+            <div class="info-row">
+              <strong>插座</strong>
+              <span>多數座位提供</span>
+            </div>
+
+            <div class="info-row">
+              <strong>不限時</strong>
+              <span>平日下午</span>
+            </div>
+
+            <div class="info-row">
+              <strong>備註</strong>
+              <span>實際營業狀況依店家公告</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         06 聯絡與行動
+    ========================== -->
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+
+      <div class="container">
+
+        <div class="contact-box">
+
+          <div>
+
+            <span class="section-label">COME & SAY HI</span>
+
+            <h2 id="contact-title">
+              今天，來22坐坐。
+            </h2>
+
+            <p>
+              一個人的午後、兩個人的聊天，
+              或只是想找個安靜地方完成今天的工作，
+              我們都為你留了一個位置。
+            </p>
+
+            <div class="contact-actions">
+
+              <!-- 地址：Google Maps -->
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=台中市東區"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+              >
+                開啟 Google Maps
+              </a>
+
+              <!-- 電話 -->
+              <a
+                href="tel:+886422000000"
+                class="btn btn-outline"
+                style="border-color: var(--navy); color: var(--navy);"
+              >
+                撥打電話
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <div class="contact-details">
+
+            <div>
+              📍 臺中市東區<br>
+              <small>距離臺中火車站步行約 8 分鐘</small>
+            </div>
+
+            <a href="tel:+886422000000">
+              ☎ 04-2200-0000
+            </a>
+
+            <div>
+              🕐 平日下午不限時
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       Footer
+  ========================== -->
+  <footer>
+
+    <div class="container footer-inner">
+
+      <div>
+        © 2026 22咖啡 · COFFEE & DESSERT
+      </div>
+
+      <div>
+        臺中市東區｜安靜喝杯咖啡
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
